@@ -63,4 +63,8 @@ localhost:3000/users/sign_in
 
 tp User.all
 
-//
+// in the file config/environments/production.rb
+
+config.action_mailer.default_url_options = { :host => 'heroku git:remote -a sotek' }
+
+etst
