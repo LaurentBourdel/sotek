@@ -67,4 +67,4 @@ tp User.all
 
 config.action_mailer.default_url_options = { :host => 'heroku git:remote -a sotek' }
 
-etst
+//
