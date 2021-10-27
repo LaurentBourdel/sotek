@@ -1,0 +1,66 @@
+//
+
+rails new sotek
+
+//Add the following line gemfile
+gem 'devise'
+
+//+..
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  
+  #gem 'pg', '>= 0.18'
+  gem 'sqlite3', '~> 1.4'
+end
+
+gem 'dotenv-rails'
+gem 'table_print'
+
+gem 'httparty'
+
+//
+
+bundle install
+
+//
+
+rails generate devise:install
+
+// in the file config/environments/development.rb
+
+config.action_mailer.default_url_options = { host: ‘localhost’, port: 3000 }
+
+// in the file config/environments/development.rb
+
+root to: "home#index"
+
+// in application.html.erb
+
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</body>
+
+//
+
+rails g devise:views
+rails g controller home index
+rails g devise User
+rails db:migrate
+rails routes | grep user
+rails s
+
+localhost:3000/users/sign_up
+localhost:3000/users/sign_out
+localhost:3000/users/sign_in
+
+//in console
+
+tp User.all
+
+//
