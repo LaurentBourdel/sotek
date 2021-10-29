@@ -24,6 +24,7 @@ document.addEventListener('resize', function(){footerPosition();});
 document.addEventListener("DOMContentLoaded", function(){footerPosition();});
 
 window.onresize = function () {
+  
 
   let  html = document.getElementById('html');
   let  body = document.getElementById('body');
