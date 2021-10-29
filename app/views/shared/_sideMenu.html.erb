@@ -1,0 +1,54 @@
+
+<!-- SIDE MENU -->
+
+<nav class="w3-sidebar w3-collapse w3-white w3-margin-left w3-margin-right" style=" width:300px; z-index:0;" id="sidebar"><br>
+ 
+  <div class="w3-container w3-row">
+
+    <div class="w3-col s2 w3-circle w3-margin-right" id="logo" style="height:46px;width:46px">
+    </div>
+  
+    <div class="w3-col s8 w3-bar">
+      
+      <span>Welcome</span><br>
+      <a class="w3-bar-item w3-button" style="color:#444444;"><i class="fa fa-envelope"></i></a>
+      <a class="w3-bar-item w3-button" style="color:#444444;"><i class="fa fa-sun"></i></a>
+      
+      <%   if user_signed_in? %>
+      <a class="w3-bar-item w3-button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sign-out-alt"></i></a>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, :class => 'dropdown-item',style:"color:#444444;"%>
+        </div>
+      <% else %>
+      <a class="w3-bar-item w3-button dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sign-in-alt"></i></i></a>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <%= link_to "Log in", new_user_session_path,  :class => 'dropdown-item', style:"color:#444444;" %>
+          <%= link_to "Sign up", new_user_registration_path,  :class => 'dropdown-item', style:"color:#444444;" %>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+
+  <div class="w3-bar-block">
+
+    <a class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" style="" onclick="close_side_menu()" title="close menu"><i class="fas fa-times fa-sm"></i>  Close Menu</a>
+
+    <a id="locBtn"><i class="fas fa-map-marked-alt"></i>  Location</a>
+    <a id="conBtn"><i class="far fa-lightbulb"></i>  Consumption</a>
+    <a id="proBtn"><i class="far fa-chart-line"></i>  Profile</a>
+    <a id="optBtn"><i class="fas fa-cog"></i>  Options</a>
+    <a id="calBtn"><i class="fa fa-calculator"></i>  Calculation</a>
+
+  </div>
+    
+</nav>
+
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="close_side_menu()" style="cursor:pointer;" title="close side menu" id="myOverlay1"></div>

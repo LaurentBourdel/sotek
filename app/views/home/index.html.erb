@@ -1,5 +1,32 @@
 
-<% name = current_user.present? ? current_user.email : 'Stranger' %>
+<html>
+  <head>
+    <title>LoginApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<h1>Welcome, <%= name %> </h1>
-<p>Find me in app/views/home/index.html.erb</p>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="w3-light-grey" id="body">
+
+  <%= render 'shared/topContainer' %>
+  <%= render 'shared/sideMenu' %>
+
+  <div class="w3-main" style="margin-left:316px;margin-top:56px;"   id="main">
+  
+    <%= render 'shared/mainHeader' %>
+    <%= render 'shared/mainContainer' %>
+  
+  </div>
+
+  <%= render 'shared/bottomFooter' %>
+  <%= render 'shared/modalCalc' %>
+
+</body>
+
+</html>
