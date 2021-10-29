@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="html">
   <head>
     <title>LoginApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,9 +7,14 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= yield(:head_tags) %>
+
   </head>
 
   <body class="w3-light-grey" id="body">
@@ -29,8 +34,12 @@
 
   <%= yield %>
 
-  
-
 </body>
 
 </html>
+
+<script type="text/javascript">
+  
+ 
+
+</script>

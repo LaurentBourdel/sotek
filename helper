@@ -67,7 +67,7 @@ tp User.all
 
 config.action_mailer.default_url_options = { :host => 'heroku git:remote -a sotek' }
 
-//
+// on 
 
 heroku create sotek
 gem install bundler -v 2.0.2
@@ -79,4 +79,3 @@ git push heroku master
 heroku run rails db:migrate
 
 //
-
