@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+ 
+ 	devise_for :users
+  devise_scope :user do
+    get '/users', to: 'devise/registrations#new'
+    get '/users/password', to: 'devise/passwords#new'
+  end
+
   get 'home/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
